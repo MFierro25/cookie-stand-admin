@@ -1,82 +1,67 @@
-import Head from 'next/head'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import { Container } from 'react-bootstrap'
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <body className="bg-green-100">
+      <div className="flex flex-col h-screen">
+        <header className="py-5 text-4xl text-left text-black bg-green-500">
+          Cookie Stand Admin
+        </header>
+        <main className="flex-1 p-5 text-center overlow-y-auto">
+        <Container style={{backgroundColor: 'lightgreen'}}>
+          <b>Create Cookie Stand</b>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+        <Form>
+          <Row>
+            <Form.Group className="mb-3" controlId="location">
+              <Form.Label>Location</Form.Label>
+              <Form.Control type="text" placeholder="Enter location" />
+            </Form.Group>
+          </Row>
+          <Row>
+            <Col>
+            <Form.Group className="mb-3" controlId="min_customer">
+              <Form.Label>Min Customers per Hour</Form.Label>
+              <Form.Control type="number" />
+            </Form.Group>
+            </Col>
+            <Col>
+            <Form.Group className="mb-3" controlId="min_customer">
+              <Form.Label>Max Customers per Hour</Form.Label>
+              <Form.Control type="number" />
+            </Form.Group>
+            </Col>
+            <Col>
+            <Form.Group className="mb-3" controlId="min_customer">
+              <Form.Label>Avg Cookies Per Sale</Form.Label>
+              <Form.Control type="number" />
+            </Form.Group>
+            </Col>
+            <Col>
+            <Button variant="success" type="submit" size="lg">
+              Create
+            </Button>
+            </Col>
+            </Row>
+          </Form>
+          </Container><br></br>
+        <div className="text-center">
+          Report Table Coming Soon...
         </div>
-      </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
-    </div>
+        <Container>
+          <p>
+           Location: Min: Max: Avg: 
+          </p>
+        </Container>
+        </main>
+        <footer className="py-5 text-left text-black bg-green-400">
+          <p> &#169; 2022</p>
+        </footer>
+      </div>
+    </body>
   )
 }
