@@ -1,11 +1,19 @@
 import Head from 'next/head';
 import Header from '../components/Header'
-import InputForm from '../components/InputForm'
-import Report from '../components/Report'
+import CookieStandAdmin from '../components/CookieStandAdmin'
 import Footer from '../components/Footer'
-import { passThroughSymbol } from 'next/dist/server/web/spec-compliant/fetch-event';
+import LoginForm from '../components/LoginForm'
+import { useAuth } from '../contexts/auth'
+
 
 export default function Home() {
+
+  const { user, login } =useAuth();
+
+  async function handleLogin(username, password) {
+    login(username, password);
+
+  }
 
   return (
     <body className="bg-green-100">
@@ -15,16 +23,16 @@ export default function Home() {
             Cookie Admin Site
           </title>
         </Head>
-
-        
         <Header />
         <main className="flex-1 p-5 text-center overlow-y-auto">
-        <InputForm /><br></br>
-        <Report />
+
+         {
+         user ? <CookieStandAdmin /> : <LoginForm onLogin={handleLogin} /> 
+         }
+
         </main>
         
         <Footer />
-        
         
       </div>
     </body>
