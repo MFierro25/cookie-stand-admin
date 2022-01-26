@@ -4,10 +4,11 @@ import Report from '/components/Report'
 
 export default function CookieStandAdmind() {
 // const { resources, deleteResource } = useResource();
+    const mockCookieStands = [{id:0, location:'Seattle'}]
 
     return (
         <>
         <InputForm />
-        <Report /></>
+        <Report cookieStands={mockCookieStands}/></>
     )
 }

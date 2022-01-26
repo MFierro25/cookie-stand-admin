@@ -1,33 +1,23 @@
 import { Container } from 'react-bootstrap'
 
-export default function Report() {
+export default function Report(props) {
     return (
         <Container>
             <table class="table table-striped">
   <thead>
     <tr>
       <th scope="col">Location</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">Totals</th>
-    </tr>
+    { props.cookieStands.map(currentCookieStand => (
+      <tr key={currentCookieStand.id}>
+        <td>
+          {currentCookieStand.location}
+        </td>
+      </tr>
+    )) }
+
   </tbody>
 </table>
         </Container>

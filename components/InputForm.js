@@ -8,20 +8,6 @@ import { useAuth } from '../contexts/auth'
 
 export default function InputForm() {
 
-  //   const { user } = useAuth();
-  //   const { createResource } = useResource();
-
-  // function handleSubmit(e) {
-  //     e.preventDefault();
-  //     const info = {
-  //       location: e.target.location.value,
-  //       min_customer: parseInt(e.target.min_customer.value),
-  //       max_customer: parseInt(e.target.max_customer.value),
-  //       avg_cookies: parseInt(e.target.avg_cookies.value),
-  //       owner: user.id
-  //     };
-  //     createResource(info);
-  //   }
 
     return (
         <Container style={{backgroundColor: 'lightgreen'}}>
