@@ -10,7 +10,7 @@ export default function Home() {
 
   const { user, login } =useAuth();
 
-  async function handleLogin(username, password) {
+  async function handleLogin(username: any, password: any) {
     login(username, password);
 
   }
